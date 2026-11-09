@@ -71,9 +71,9 @@ Una vez que el clúster de Kubernetes está desplegado exitosamente y la aplicac
 Este paso se ejecuta de manera independiente para respetar el ciclo de dependencias lógicas (asegurando la existencia y disponibilidad del clúster antes de inyectar las herramientas de telemetría):
 
 ```bash
-cd terraform/observability
+cd terraform/monitoring
 terraform init
-terraform apply -auto-approve
+terraform apply
 ```
 
 *Este módulo se encarga de instalar y configurar **Prometheus** (para la recolección de métricas del clúster y de la base de datos PostgreSQL) y **Grafana** (para la capa de visualización de datos), conectándolos automáticamente.*
