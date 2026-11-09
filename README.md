@@ -29,9 +29,9 @@ El proyecto se compone de una arquitectura desacoplada con un `frontend` y un `b
 
 *   `/.github/workflows/`: Pipelines automatizados de CI/CD.
 *   `/terraform/`: Código de infraestructura estructurado para múltiples proveedores cloud y operaciones.
-  -`/aws/`: Recursos de red e infraestructura en Amazon.
-  -`/gcp/` : Recursos de red e infraestructura en Google Cloud.
-  -`/monitoring/` : Código de Terraform encargado de desplegar Prometheus y Grafana una vez el clúster está listo.
+*   `/aws/`: Recursos de red e infraestructura en Amazon.
+*   `/gcp/` : Recursos de red e infraestructura en Google Cloud.
+*   `/monitoring/` : Código de Terraform encargado de desplegar Prometheus y Grafana una vez el clúster está listo.
 *   `/kubernetes/`: Manifiestos YAML (Deployments, Services, Ingress, HPA).
 *   `/backend/` & `/frontend/`: Código fuente de las aplicaciones y sus respectivos `Dockerfiles`.
 *   `/tests/`: Scripts automatizados para validar la funcionalidad del sitio e inyectar ráfagas de carga simulando tráfico real.
