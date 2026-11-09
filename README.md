@@ -56,16 +56,11 @@ cd ../gcp && terraform init && terraform apply
 
 ### 2. Despliegue Automatizado de la Aplicación (CI/CD) mediante Pipeline (GitHub Actions)
 No es necesario aplicar los manifiestos de Kubernetes manualmente. La plataforma implementa un flujo de **Continuous Deployment (CD)** completo:
+Cada `push`  hacia la rama principal dispara el flujo automatizado que gestiona todo el ciclo de vida:
 
 1. El pipeline de GitHub Actions utiliza las credenciales seguras almacenadas en los **GitHub Secrets** para autenticarse con el proveedor cloud.
 2. Al realizar un `push` a la rama principal, el workflow compila las imágenes de Docker para el `frontend`, `backend` y `database`.
 3. Las imágenes se suben al registro de contenedores y el pipeline actualiza automáticamente el clúster de **k3s**, desplegando la aplicación de extremo a extremo de forma transparente.
-
-Cada `push` o `Pull Request` hacia la rama principal dispara el flujo automatizado que gestiona todo el ciclo de vida:
-
-1.  **Build & Push:** Construcción multi-stage de imágenes Docker (`frontend`, `backend`, `database`) y publicación en el registro de contenedores.
-2.  **Automated Continuous Deployment:** Usando los **GitHub Secrets** encapsulados (credenciales de acceso a AWS/GCP), el pipeline se conecta de forma segura a la infraestructura y actualiza los manifiestos en el clúster de **k3s** con las nuevas imágenes de producción.
-
 
 
 ### 3. Aprovisionamiento de la Plataforma de Observabilidad (Día 2)
